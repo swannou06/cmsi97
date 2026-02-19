@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMSI Guadeloupe - Sécurité Incendie</title>
+    <meta name="description" content="CM Sécurité Incendie - Experts en prévention et sécurité incendie en Guadeloupe. Installation, maintenance, formation et mise en conformité.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .btn-primary {
+            background-color: #dc2626;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #b91c1c;
+            transform: translateY(-2px);
+        }
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background-color: #dc2626;
+            margin: 0 auto 1.5rem auto;
+        }
+        .service-card-hover {
+            transition: all 0.3s ease;
+        }
+        .service-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 300px;
+        }
+        .contact-info-item:hover i {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        .stat-item {
+            transition: all 0.3s ease;
+        }
+        .stat-item:hover {
+            transform: translateY(-3px);
+        }
+        .formation-item:hover {
+            border-color: #dc2626;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#accueil" class="flex items-center">
+                <!-- CMSI Logo officiel -->
+                <img src="https://i.postimg.cc/9Q9nsh0W/CMSI-logo.png" 
+                     alt="CM Sécurité Incendie - Sécurité incendie en Guadeloupe"
+                     class="h-16 w-auto">
+            </a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <div id="nav-links" class="flex space-x-8"></div>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2">
+                <div id="mobile-nav-links" class="space-y-1"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-gradient py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up">
+                    Experts en Sécurité Incendie<br>
+                    <span class="text-red-600">en Guadeloupe</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.2s">
+                    Une équipe certifiée au service de votre sécurité. Nous accompagnons entreprises, collectivités et ERP dans toute la Guadeloupe.
+                </p>
+                <div id="hero-buttons" class="flex flex-col sm:flex-row justify-center gap-4 mb-12 animate-fade-in-up" style="animation-delay: 0.4s"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 0.6s">
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center">
+                        <i class="fas fa-map-marker-alt text-red-600 text-3xl mr-4"></i>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-900">Toute la Guadeloupe</div>
+                            <div class="text-gray-600">Zone d'intervention</div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center">
+                        <i class="fas fa-user-shield text-red-600 text-3xl mr-4"></i>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-900">Équipe certifiée</div>
+                            <div class="text-gray-600">Professionnels qualifiés</div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center">
+                        <i class="fas fa-calendar-check text-red-600 text-3xl mr-4"></i>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-900">Créée en 2024</div>
+                            <div class="text-gray-600">Expérience et expertise</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Services</h2>
+                <div class="section-divider"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Des solutions complètes de sécurité incendie adaptées à vos besoins spécifiques.
+                </p>
+            </div>
+            
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="btn-primary text-white font-medium py-3 px-8 rounded-lg inline-block text-lg hover:shadow-lg transition-all duration-300">
+                    Demander un devis personnalisé
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        À propos de <span class="text-red-600">CMSI</span>
+                    </h2>
+                    <div class="w-20 h-1 bg-red-600 mb-6"></div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Créée en 2024, CM Sécurité Incendie est spécialisée dans la prévention et la sécurité incendie.
+                    </p>
+                    
+                    <p class="text-gray-700 mb-8">
+                        Nous accompagnons les entreprises, collectivités et établissements recevant du public (ERP) dans toute la Guadeloupe, pour la mise en conformité réglementaire, l'installation d'équipements et la formation du personnel.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white p-6 rounded-lg shadow-sm stat-item">
+                            <i class="fas fa-award text-red-600 text-2xl mb-3"></i>
+                            <div class="text-xl font-bold text-gray-900 mb-1">Certifications</div>
+                            <div class="text-gray-600 text-sm">Qualibat, APSAD, normes en vigueur</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm stat-item">
+                            <i class="fas fa-users text-red-600 text-2xl mb-3"></i>
+                            <div class="text-xl font-bold text-gray-900 mb-1">Équipe</div>
+                            <div class="text-gray-600 text-sm">Certifiée et expérimentée</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <i class="fas fa-phone-alt text-red-600 text-xl mr-3"></i>
+                        <div>
+                            <div class="text-gray-600">Appelez-nous</div>
+                            <div class="text-xl font-bold text-gray-900">+590 690 62 42 02</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Pourquoi choisir CMSI ?</h3>
+                        
+                        <div id="why-choose-list" class="space-y-6"></div>
+                        
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <div class="flex items-center">
+                                <div class="bg-red-100 p-4 rounded-full mr-4">
+                                    <i class="fas fa-handshake text-red-600 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-gray-900">Ils nous font confiance</div>
+                                    <div class="text-gray-600 text-sm">Entreprises et collectivités de toute la Guadeloupe</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="formations" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos Formations</h2>
+                <div class="section-divider"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Des formations adaptées à vos besoins pour une maîtrise parfaite des gestes et procédures de sécurité incendie.
+                </p>
+            </div>
+            
+            <div id="formations-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"></div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="btn-primary text-white font-medium py-3 px-8 rounded-lg inline-block text-lg hover:shadow-lg transition-all duration-300">
+                    Demander un programme de formation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contactez-nous</h2>
+                <div class="section-divider"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Une question, un devis ou besoin d'un conseil ? Notre équipe est à votre disposition.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Envoyez-nous un message</h3>
+                        
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="nom" class="block text-gray-700 font-medium mb-2">Nom *</label>
+                                    <input type="text" id="nom" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200" placeholder="Votre nom" required>
+                                </div>
+                                <div>
+                                    <label for="prenom" class="block text-gray-700 font-medium mb-2">Prénom *</label>
+                                    <input type="text" id="prenom" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200" placeholder="Votre prénom" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="entreprise" class="block text-gray-700 font-medium mb-2">Entreprise / Établissement</label>
+                                <input type="text" id="entreprise" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200" placeholder="Nom de votre structure">
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email *</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200" placeholder="votre@email.com" required>
+                                </div>
+                                <div>
+                                    <label for="telephone" class="block text-gray-700 font-medium mb-2">Téléphone *</label>
+                                    <input type="tel" id="telephone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200" placeholder="+590 XXX XX XX XX" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="sujet" class="block text-gray-700 font-medium mb-2">Sujet *</label>
+                                <select id="sujet" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200" required>
+                                    <option value="">Sélectionnez un sujet</option>
+                                    <option value="devis">Demande de devis</option>
+                                    <option value="formation">Information sur les formations</option>
+                                    <option value="maintenance">Service de maintenance</option>
+                                    <option value="conformite">Mise en conformité</option>
+                                    <option value="diagnostic">Diagnostic sécurité</option>
+                                    <option value="autre">Autre demande</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200" placeholder="Votre message..." required></textarea>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="btn-primary text-white font-medium py-3 px-6 rounded-lg w-full text-lg hover:shadow-lg transition-all duration-300">
+                                    Envoyer le message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg h-full">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-8">Nos coordonnées</h3>
+                        
+                        <div id="contact-info" class="space-y-8 mb-8"></div>
+                        
+                        <div class="border-t border-gray-200 pt-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Horaires d'ouverture</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Lundi - Vendredi</span>
+                                    <span class="font-medium text-gray-900">8h - 18h</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Samedi</span>
+                                    <span class="font-medium text-gray-900">9h - 12h</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Dimanche</span>
+                                    <span class="font-medium text-gray-900">Fermé</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-t border-gray-200 pt-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Zone d'intervention</h4>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-red-600 text-xl mr-3"></i>
+                                    <span class="text-gray-700">Toute la Guadeloupe</span>
+                                </div>
+                                <div class="mt-2 text-sm text-gray-600">
+                                    Basse-Terre, Pointe-à-Pitre, Les Abymes, Baie-Mahault, et toute l'île.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.postimg.cc/9Q9nsh0W/CMSI-logo.png" 
+                             alt="CM Sécurité Incendie - Sécurité incendie en Guadeloupe"
+                             class="h-12 w-auto mr-3">
+                        <div>
+                            <div class="text-xl font-bold">CMSI</div>
+                            <div class="text-xs text-gray-400">SÉCURITÉ INCENDIE</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Experts en sécurité incendie en Guadeloupe depuis 2024.
+                    </p>
+                    <div id="footer-social" class="flex space-x-4"></div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Services</h4>
+                    <ul id="footer-services" class="space-y-3"></ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Formations</h4>
+                    <ul id="footer-formations" class="space-y-3"></ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contact</h4>
+                    <ul id="footer-contact" class="space-y-3"></ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 CMSI Guadeloupe - CM Sécurité Incendie. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data layer
+        const navigationItems = [
+            { "label": "Accueil", "href": "#accueil", "icon": "fas fa-home" },
+            { "label": "Services", "href": "#services", "icon": "fas fa-cogs" },
+            { "label": "À propos", "href": "#about", "icon": "fas fa-info-circle" },
+            { "label": "Formations", "href": "#formations", "icon": "fas fa-graduation-cap" },
+            { "label": "Contact", "href": "#contact", "icon": "fas fa-envelope" }
+        ];
+
+        const heroButtons = [
+            { "label": "Demander un devis", "href": "#contact", "style": "btn-primary text-white font-medium py-4 px-8 rounded-lg hover:shadow-lg transition-all duration-300" },
+            { "label": "Voir nos services", "href": "#services", "style": "bg-white text-gray-800 border border-gray-300 font-medium py-4 px-8 rounded-lg hover:shadow-lg transition-all duration-300" }
+        ];
+
+        const servicesData = [
+            { 
+                "icon": "fas fa-fire-extinguisher", 
+                "title": "Installation Équipements", 
+                "description": "Installation complète de tous équipements de sécurité incendie : extincteurs, sprinklers, alarmes, etc."
+            },
+            { 
+                "icon": "fas fa-tools", 
+                "title": "Maintenance & Contrôle", 
+                "description": "Maintenance préventive et corrective, contrôles réglementaires et vérifications périodiques."
+            },
+            { 
+                "icon": "fas fa-clipboard-check", 
+                "title": "Diagnostics & Conseils", 
+                "description": "Audit complet de vos installations et conseils personnalisés pour une conformité optimale."
+            },
+            { 
+                "icon": "fas fa-shield-alt", 
+                "title": "SSI & Alarmes", 
+                "description": "Conception et installation de Systèmes de Sécurité Incendie adaptés à votre établissement."
+            },
+            { 
+                "icon": "fas fa-building", 
+                "title": "Conformité ERP", 
+                "description": "Accompagnement spécifique pour les Établissements Recevant du Public (ERP)."
+            },
+            { 
+                "icon": "fas fa-file-contract", 
+                "title": "Dossiers Réglementaires", 
+                "description": "Élaboration et mise à jour de vos dossiers de sécurité réglementaires."
+            }
+        ];
+
+        const formationsData = [
+            { 
+                "title": "Manipulation Extincteurs", 
+                "duration": "2 heures",
+                "description": "Formation pratique à l'utilisation des différents types d'extincteurs.",
+                "features": ["Exercices pratiques", "Théorie adaptée", "Attestation de formation"]
+            },
+            { 
+                "title": "Équipier 1ère Intervention", 
+                "duration": "1 journée",
+                "description": "Formation complète pour les équipiers de première intervention.",
+                "features": ["Évacuation", "Alarme incendie", "Utilisation des moyens"]
+            },
+            { 
+                "title": "Guide-file & Serre-file", 
+                "duration": "3 heures",
+                "description": "Formation spécifique pour les personnes désignées guide-file et serre-file.",
+                "features": ["Rôles et missions", "Exercices pratiques", "Mise en situation"]
+            },
+            { 
+                "title": "Formation SSI", 
+                "duration": "1 à 3 jours",
+                "description": "Formation sur les Systèmes de Sécurité Incendie (SSI).",
+                "features": ["Manipulation SSI", "Procédures", "Maintenance"]
+            }
+        ];
+
+        const whyChooseData = [
+            { "icon": "fas fa-certificate", "title": "Certifications", "description": "Nos équipes sont certifiées et qualifiées selon les normes en vigueur." },
+            { "icon": "fas fa-map-marker-alt", "title": "Disponibilité", "description": "Intervention sur toute la Guadeloupe dans les meilleurs délais." },
+            { "icon": "fas fa-users", "title": "Accompagnement", "description": "Suivi personnalisé et conseils adaptés à vos besoins spécifiques." },
+            { "icon": "fas fa-clipboard-list", "title": "Conformité", "description": "Respect strict de la réglementation et des normes de sécurité." }
+        ];
+
+        const contactInfoData = [
+            { 
+                "icon": "fas fa-map-marker-alt", 
+                "title": "Adresse", 
+                "details": "118 Rue des Fougères<br>Lot Belcourt<br>97122 Baie-Mahault, Guadeloupe"
+            },
+            { 
+                "icon": "fas fa-phone-alt", 
+                "title": "Téléphone", 
+                "details": "+590 690 62 42 02<br><span class=\"text-sm text-gray-600\">Du lundi au vendredi 8h-18h</span>"
+            },
+            { 
+                "icon": "fas fa-envelope", 
+                "title": "Email", 
+                "details": "cmsi.gp@gmail.com<br><span class=\"text-sm text-gray-600\">Réponse sous 24h</span>"
+            }
+        ];
+
+        const socialData = [
+            { "icon": "fab fa-facebook-f", "href": "#", "label": "Facebook" },
+            { "icon": "fab fa-linkedin-in", "href": "#", "label": "LinkedIn" },
+            { "icon": "fab fa-instagram", "href": "#", "label": "Instagram" }
+        ];
+
+        const footerServicesData = [
+            { "label": "Installation", "href": "#services" },
+            { "label": "Maintenance", "href": "#services" },
+            { "label": "Diagnostics", "href": "#services" },
+            { "label": "Conformité ERP", "href": "#services" },
+            { "label": "SSI & Alarmes", "href": "#services" }
+        ];
+
+        const footerFormationsData = [
+            { "label": "Manipulation extincteurs", "href": "#formations" },
+            { "label": "Équipier 1ère intervention", "href": "#formations" },
+            { "label": "Guide-file & Serre-file", "href": "#formations" },
+            { "label": "Formation SSI", "href": "#formations" }
+        ];
+
+        const footerContactData = [
+            { "label": "+590 690 62 42 02", "href": "tel:+590690624202", "icon": "fas fa-phone" },
+            { "label": "cmsi.gp@gmail.com", "href": "mailto:cmsi.gp@gmail.com", "icon": "fas fa-envelope" },
+            { "label": "Baie-Mahault", "href": "#contact", "icon": "fas fa-map-marker-alt" }
+        ];
+
+        // Reusable render functions
+        function renderNavItems(items) {
+            return items.map(item => "<a href=\"" + item.href + "\" class=\"font-medium text-gray-700 hover:text-red-600 transition-colors duration-200 flex items-center\"><i class=\"" + item.icon + " mr-2 text-red-600\"></i>" + item.label + "</a>").join("");
+        }
+
+        function renderMobileNavItems(items) {
+            return items.map(item => "<a href=\"" + item.href + "\" class=\"flex items-center py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-red-600 rounded-lg transition-colors duration-200\"><i class=\"" + item.icon + " mr-3 text-red-600 w-6 text-center\"></i>" + item.label + "</a>").join("");
+        }
+
+        function renderHeroButtons(buttons) {
+            return buttons.map(button => "<a href=\"" + button.href + "\" class=\"" + button.style + " text-center transition-all duration-300\">" + button.label + "</a>").join("");
+        }
+
+        function renderServices(services) {
+            return services.map(service => "<div class=\"service-card-hover bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:border-red-100\"><div class=\"text-red-600 mb-4\"><i class=\"" + service.icon + " text-3xl\"></i></div><h3 class=\"text-xl font-bold text-gray-900 mb-3\">" + service.title + "</h3><p class=\"text-gray-600 mb-6\">" + service.description + "</p><a href=\"#contact\" class=\"text-red-600 font-medium flex items-center hover:text-red-700 transition-colors duration-200\">En savoir plus <i class=\"fas fa-arrow-right ml-2 text-sm\"></i></a></div>").join("");
+        }
+
+        function renderFormations(formations) {
+            return formations.map(formation => "<div class=\"formation-item bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition-all duration-300\"><div class=\"flex justify-between items-start mb-4\"><div><h3 class=\"text-xl font-bold text-gray-900 mb-1\">" + formation.title + "</h3><p class=\"text-red-600 font-medium\"><i class=\"far fa-clock mr-2\"></i>" + formation.duration + "</p></div><i class=\"fas fa-graduation-cap text-red-600 text-2xl\"></i></div><p class=\"text-gray-600 mb-4\">" + formation.description + "</p><ul class=\"space-y-2\">" + formation.features.map(feature => "<li class=\"flex items-center text-gray-600\"><i class=\"fas fa-check text-green-500 mr-2\"></i>" + feature + "</li>").join("") + "</ul><a href=\"#contact\" class=\"mt-6 inline-block text-red-600 font-medium hover:text-red-700 transition-colors duration-200\">Demander un devis <i class=\"fas fa-arrow-right ml-1 text-sm\"></i></a></div>").join("");
+        }
+
+        function renderWhyChoose(items) {
+            return items.map(item => "<div class=\"flex items-start mb-4\"><div class=\"bg-red-100 p-2 rounded-lg mr-4\"><i class=\"" + item.icon + " text-red-600 text-lg\"></i></div><div><h4 class=\"font-bold text-gray-900 mb-1\">" + item.title + "</h4><p class=\"text-gray-600\">" + item.description + "</p></div></div>").join("");
+        }
+
+        function renderContactInfo(items) {
+            return items.map(item => "<div class=\"contact-info-item flex items-start\"><div class=\"bg-red-100 p-3 rounded-full mr-4\"><i class=\"" + item.icon + " text-red-600\"></i></div><div><h4 class=\"font-bold text-gray-900 mb-1\">" + item.title + "</h4><div class=\"text-gray-600\">" + item.details + "</div></div></div>").join("");
+        }
+
+        function renderSocialLinks(links) {
+            return links.map(link => "<a href=\"" + link.href + "\" title=\"" + link.label + "\" class=\"bg-gray-800 text-white p-3 rounded-full hover:bg-red-600 transition-all duration-300 transform hover:scale-105\"><i class=\"" + link.icon + " text-lg\"></i></a>").join("");
+        }
+
+        function renderFooterLinks(items, isContact = false) {
+            return items.map(item => "<li><a href=\"" + item.href + "\" class=\"text-gray-400 hover:text-white transition-colors duration-200 flex items-center\">" + (isContact && item.icon ? "<i class=\"" + item.icon + " mr-2 w-5 text-center\"></i>" : "") + item.label + "</a></li>").join("");
+        }
+
+        // Initialize page content
+        document.getElementById("nav-links").innerHTML = renderNavItems(navigationItems);
+        document.getElementById("mobile-nav-links").innerHTML = renderMobileNavItems(navigationItems);
+        document.getElementById("hero-buttons").innerHTML = renderHeroButtons(heroButtons);
+        document.getElementById("services-grid").innerHTML = renderServices(servicesData);
+        document.getElementById("formations-grid").innerHTML = renderFormations(formationsData);
+        document.getElementById("why-choose-list").innerHTML = renderWhyChoose(whyChooseData);
+        document.getElementById("contact-info").innerHTML = renderContactInfo(contactInfoData);
+        document.getElementById("footer-social").innerHTML = renderSocialLinks(socialData);
+        document.getElementById("footer-services").innerHTML = renderFooterLinks(footerServicesData);
+        document.getElementById("footer-formations").innerHTML = renderFooterLinks(footerFormationsData);
+        document.getElementById("footer-contact").innerHTML = renderFooterLinks(footerContactData, true);
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        
+        menuToggle.addEventListener("click", function() {
+            mobileMenu.classList.toggle("open");
+            const icon = menuToggle.querySelector("i");
+            if (mobileMenu.classList.contains("open")) {
+                icon.className = "fas fa-times text-2xl";
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight = mobileMenu.scrollHeight + "px";
+            } else {
+                icon.className = "fas fa-bars text-2xl";
+                mobileMenu.style.maxHeight = "0";
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener("click", function(event) {
+            const link = event.target.closest("a[href^='#']");
+            if (!link) return;
+            
+            event.preventDefault();
+            const targetId = link.getAttribute("href");
+            if (targetId === "#") return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains("open")) {
+                    mobileMenu.classList.remove("open");
+                    menuToggle.querySelector("i").className = "fas fa-bars text-2xl";
+                    mobileMenu.style.maxHeight = "0";
+                }
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: "smooth"
+                });
+            }
+        });
+
+        // Form submission
+        const contactForm = document.getElementById("contact-form");
+        if (contactForm) {
+            contactForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                
+                // Simple form validation
+                const requiredFields = contactForm.querySelectorAll("[required]");
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = "#dc2626";
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = "";
+                    }
+                });
+                
+                if (isValid) {
+                    // In a real application, you would send this data to a server
+                    // For now, we'll just show a success message
+                    const submitBtn = contactForm.querySelector("button[type='submit']");
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Envoi en cours...';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = "Message envoyé !";
+                        submitBtn.style.backgroundColor = "#059669";
+                        
+                        setTimeout(() => {
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                            submitBtn.style.backgroundColor = "";
+                            contactForm.reset();
+                        }, 3000);
+                    }, 1500);
+                }
+            });
+            
+            // Remove red border when user starts typing
+            contactForm.addEventListener("input", function(e) {
+                if (e.target.hasAttribute("required") && e.target.value.trim()) {
+                    e.target.style.borderColor = "";
+                }
+            });
+        }
+
+        // Add hover effect to service cards
+        const serviceCards = document.querySelectorAll(".service-card-hover");
+        serviceCards.forEach(card => {
+            card.addEventListener("mouseenter", function() {
+                const icon = this.querySelector("i");
+                if (icon) {
+                    icon.style.transform = "scale(1.2)";
+                    icon.style.transition = "transform 0.3s ease";
+                }
+            });
+            
+            card.addEventListener("mouseleave", function() {
+                const icon = this.querySelector("i");
+                if (icon) {
+                    icon.style.transform = "scale(1)";
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate-fade-in-up");
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.querySelectorAll("section").forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
